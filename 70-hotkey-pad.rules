@@ -1,0 +1,5 @@
+# /etc/udev/rules.d/70-hotkey-pad.rules
+# Rules for numpad soundboard
+ATTRS{idVendor}=="1ea7",
+ATTRS{idProduct}=="0066",
+OWNER="media"
