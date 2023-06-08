@@ -28,8 +28,9 @@ You may have to manually modify the $HOME/KeypadSB/soundpad.sh file to use your 
 
 ## Manual Installation (depreciated)
 
-* Download the MInst.tar.xz release
 * Install the folowing dependancies: actkbd, mpv, socat, zenity
+* Download the MInst.tar.xz release
+* Extract the package
 * modify the 70-hotkey-pad.rules file to match your numpad's device IDs and then copy it to /etc/udev/rules.d/
 * add soundpad.sh to the list of startup applications (debian, ubuntu, etc) - OR -
   * run # crontab -e
