@@ -13,7 +13,7 @@ I use this to allow my kids to play music and sound effects I have pre-selected,
 * sudo apt install git
 * git clone https://github.com/DrDecagon/ilianas-SoundPad.git
 * cd ilianas-soundpad
-* sh installer.sh
+* sh install.sh
 
 After installation, there should be a shortcut on the desktop named Iliana's SP Playlist Tool. Run this to set sound lists for the numpad.
 
