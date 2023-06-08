@@ -39,10 +39,8 @@ mkdir -p $HOME/KeypadSB/config/currentPlist
 # extract demo files
 tar -xf sounds.tar.xz --directory=$HOME/KeypadSB/
 
-# Copy config files and folders
-cp ./config/mpv.conf ~/KeypadSB/config/
-cp ./config/actkbd.conf ~/KeypadSB/config/
-cp ./config/plistTool.sh ~/KeypadSB/config/
+# Copy config files
+cp ./config/* ~/KeypadSB/config/
 chmod a+x ~/KeypadSB/config/plistTool.sh
 
 # Create startup script        !!!!!!! choose dev input
