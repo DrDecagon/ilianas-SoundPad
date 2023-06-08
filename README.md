@@ -1,6 +1,6 @@
 # -------------------------- 
-# Iliana's Soundpad on Linux
-# Linux setup for using a wireless numpad as a music / sound / dj pad
+#Iliana's Soundpad on Linux
+Linux setup for using a wireless numpad as a music / sound / dj pad
 # --------------------------
 
 install the folowing dependancies
