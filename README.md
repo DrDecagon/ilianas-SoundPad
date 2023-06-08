@@ -3,11 +3,9 @@
 - Linux setup for using a wireless numpad as a music / sound / dj pad
 # -----------------------------------------
 -
-- This application allows you to use a standard external numpad as a dedicated and isolated input device for playing music or sounds, 
-- while leaving the other inputs devices (like keyboard or media remote) free to control the OS normally.
+- This application allows you to use a standard external numpad as a dedicated and isolated input device for playing music or sounds, while leaving the other inputs devices (like keyboard or media remote) free to control the OS normally.
 -
-- I use this to allow my kids to play music and sound effects I have pre-selected,
-- at the volume I choose, while keeping them from messing up my media center.
+- I use this to allow my kids to play music and sound effects I have pre-selected, at the volume I choose, while keeping them from messing up my media center.
 -
 -
 -
