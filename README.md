@@ -18,6 +18,7 @@ I use this to allow my kids to play music and sound effects I have pre-selected,
 After installation, there should be a shortcut on the desktop named Iliana's SP Playlist Tool. Run this to set sound lists for the numpad.
 
 You may have to manually modify /etc/udev/rules.d/70-hotkey-pad.rules to include your device ID.
+
 You may have to manually modify the $HOME/KeypadSB/soundpad.sh file to use your model of numpad. The following lines will need to be tweaked:
   * xinput --disable 'keyboard:2.4G Mouse'
   * actkbd -D -q -c $HOME/KeypadSB/config/actkbd.conf -d /dev/input/by-id/usb-1ea7_2.4G_Mouse-event-kbd
@@ -50,6 +51,6 @@ and the following open source projects
 
 Icons in the project were created by deemakdaksina - <a href="https://www.flaticon.com/free-icons/keypad" title="keypad icons">Flaticon</a> 
 
-The file *sounds.tar.xz* contains content covered under Section 107 of the Copyright Act in the United States. 
+The file *sounds.tar.xz* contains content covered under Section 107 of the Copyright Act in the United States. See LICENSE for disclaimer.
 
 The rest of this project is released under the terms of the BSD 3-Clause License
