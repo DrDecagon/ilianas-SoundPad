@@ -25,10 +25,10 @@ if command -v git &> /dev/null; then
   cd ..
   
 elif command -v zenity &> /dev/null; then
-  zenity --info --width 300 --title="Install aptkbd" --text="Manually install aptkbd | https://github.com/thkala/actkbd"
+  zenity --info --width 300 --title="Install aptkbd" --text="Manually install aptkbd | https://github.com/mrb0nk500/actkbd"
   
 else
-  echo "Manually install actkbd | https://github.com/thkala/actkbd"
+  echo "Manually install actkbd | https://github.com/mrb0nk500/actkbd"
   sleep 3
   
 fi
