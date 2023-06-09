@@ -16,7 +16,7 @@ fi
 
 # Install actkbd
 if command -v git &> /dev/null; then
-  rm -r actkbd
+  rm -rf actkbd
   git clone https://github.com/mrb0nk500/actkbd.git
   cd actkbd
   make
