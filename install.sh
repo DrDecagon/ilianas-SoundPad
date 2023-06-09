@@ -59,6 +59,7 @@ EOF
 chmod a+x ~/KeypadSB/soundpad.sh
 
 # Create rule for keypad       !!!!!!! allow selection of keyboard
+rm 70-hotkey-pad.rules
 cat > 70-hotkey-pad.rules<< EOF
 # /etc/udev/rules.d/70-hotkey-pad.rules
 # Rules for numpad soundboard
