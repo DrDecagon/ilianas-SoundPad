@@ -44,10 +44,8 @@ You may have to manually modify the $HOME/KeypadSB/soundpad.sh file to use your 
 Special thanks to
 * Theodoros Kalamatianos https://github.com/thkala/actkbd
 * mrb0nk500 https://github.com/mrb0nk500/actkbd 
-
-and the following open source projects
-* http://www.dest-unreach.org/socat/
-* https://mpv.io/
+* The Socat project http://www.dest-unreach.org/socat/
+* The MPV project https://mpv.io/
 
 Icons in the project were created by deemakdaksina - <a href="https://www.flaticon.com/free-icons/keypad" title="keypad icons">Flaticon</a> 
 
