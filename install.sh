@@ -98,3 +98,5 @@ X-GNOME-Autostart-enabled=true
 Name=Iliana's Soundpad
 Comment=Autostart Iliana's Soundpad application
 EOF
+
+echo Installation Complete!
