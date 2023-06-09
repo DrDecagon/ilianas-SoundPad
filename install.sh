@@ -3,14 +3,15 @@
 
 # Install dependancies 
 if command -v apt &> /dev/null; then
-  sudo apt install zenity mpv socat git gcc
+  sudo apt install zenity mpv socat git gcc make
   
 elif command -v zenity &> /dev/null; then
-  zenity --info --width 350 --title="Dependancies" --text="Install mpv, socat, git, and gcc via your package manager, appstore, or from source."
+  zenity --info --width 350 --title="Dependancies" --text="Install mpv, socat, git, make, and gcc via your package manager, appstore, or from source.  Press OK once dependancies are installed"
   
 else
-  echo "Install mpv, socat, gcc, git, and zenity"
-  sleep 3
+  echo "Install zenity via your package manager, appstore, or from source"
+  sleep 5
+  exit
   
 fi
 
@@ -27,7 +28,7 @@ elif command -v zenity &> /dev/null; then
   zenity --info --width 300 --title="Install aptkbd" --text="Manually install aptkbd | https://github.com/thkala/actkbd"
   
 else
-  echo "Manually install aptkbd | https://github.com/thkala/actkbd"
+  echo "Manually install actkbd | https://github.com/thkala/actkbd"
   sleep 3
   
 fi
