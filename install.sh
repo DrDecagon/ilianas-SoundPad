@@ -6,10 +6,10 @@ if command -v apt &> /dev/null; then
   sudo apt install zenity mpv socat git gcc make
   
 elif command -v zenity &> /dev/null; then
-  zenity --info --width 350 --title="Dependancies" --text="Install mpv, socat, git, make, and gcc via your package manager, appstore, or from source.  Press OK once dependancies are installed"
+  zenity --info --width 350 --title="Dependancies" --text="Install mpv, socat, git, make, and gcc via your package manager, Ubuntu Software Center, or from source.  Press OK once dependancies are installed"
   
 else
-  echo "Install zenity via your package manager, appstore, or from source"
+  echo "Install zenity via your package manager, Ubuntu Software Center, or from source"
   sleep 5
   exit
   
