@@ -91,7 +91,7 @@ mkdir $HOME/.config/autostart/
 cat > $HOME/.config/autostart/soundpad.sh.desktop<< EOF
 [Desktop Entry]
 Type=Application
-Exec=$HOME/KeypadSB/soundpad.sh
+Exec=sh $HOME/KeypadSB/soundpad.sh
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
