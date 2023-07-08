@@ -46,7 +46,7 @@ cp ./config/* ~/KeypadSB/config/
 chmod a+x ~/KeypadSB/config/plistTool.sh
 
 # Choose device to be used
-aDev="/dev/input/by-id/usb-1ea7_2.4G_Mouse-event-kbd"
+aDev="/dev/input/by-id/$(zenity --list --title="Select keypad" --text="WARNING: this will BLOCK regular input from selected device" --hide-header --column="devices" $(ls /dev/input/by-id/) )"
 vID=$(udevadm info $aDev | grep -F 'ID_VENDOR_ID=' | cut -d'=' -f2)
 pID=$(udevadm info $aDev | grep -F 'ID_MODEL_ID=' | cut -d'=' -f2)
 
