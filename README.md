@@ -17,14 +17,6 @@ I use this to allow my kids to play music and sound effects I have pre-selected,
 
 After installation, there should be a shortcut on the desktop named Iliana's SP Playlist Tool. Run this to set sound lists for the numpad.
 
-You may have to manually modify /etc/udev/rules.d/70-hotkey-pad.rules to include your device ID.
-
-You may have to manually modify the $HOME/KeypadSB/soundpad.sh file to use your model of numpad. The following lines will need to be tweaked:
-  * xinput --disable 'keyboard:2.4G Mouse'
-  * actkbd -D -q -c $HOME/KeypadSB/config/actkbd.conf -d /dev/input/by-id/usb-1ea7_2.4G_Mouse-event-kbd
-
-(I plan to implement a selector for these last 2 steps in the future.)
-
 
 
 ## Manual Installation (depreciated)
@@ -36,6 +28,9 @@ You may have to manually modify the $HOME/KeypadSB/soundpad.sh file to use your 
 * add soundpad.sh to the list of startup applications (debian, ubuntu, etc) - OR -
   * run # crontab -e
   * then add "@reboot sh $HOME/Music/Keypad/soundpad.sh" without quotes
+* Modify the $HOME/KeypadSB/soundpad.sh file to use your model of numpad. Run 'xinput list' to find device name. Look in /dev/input/by-id for device ID
+  * xinput --disable 'keyboard:YOUR_DEVICE_NAME_HERE'
+  * actkbd -D -q -c $HOME/KeypadSB/config/actkbd.conf -d /dev/input/by-id/YOUR_DEVICE_ID_HERE
 
 
 
