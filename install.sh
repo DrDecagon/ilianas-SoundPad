@@ -45,27 +45,40 @@ tar -xf sounds.tar.xz --directory=$HOME/KeypadSB/
 cp ./config/* ~/KeypadSB/config/
 chmod a+x ~/KeypadSB/config/plistTool.sh
 
-# Create startup script        !!!!!!! choose dev input
+# Choose device to be used
+aDev="/dev/input/by-id/usb-1ea7_2.4G_Mouse-event-kbd"
+vID=$(udevadm info $aDev | grep -F 'ID_VENDOR_ID=' | cut -d'=' -f2)
+pID=$(udevadm info $aDev | grep -F 'ID_MODEL_ID=' | cut -d'=' -f2)
+
+if [ $XDG_SESSION_TYPE == "wayland" ]; then
+  xincom="#xinput disable command not needed. System using wayland"
+else
+  xincom="xinput disable 'keyboard:$(udevadm info -a $aDev | grep -F -w 'ATTRS{name}==' | cut -d'"' -f2)'"
+fi
+
+# Create startup script
 cat > $HOME/KeypadSB/soundpad.sh<< EOF
 #!/bin/bash
-# Disable keyboard char entries into X
-xinput --disable 'keyboard:2.4G Mouse'
+# Disable keyboard via xinput entries into X
+$xincom
 # Run MPV with custom config listening to /tmp/mpvsocket
 mpv --config-dir=$HOME/KeypadSB/config &
 # Run actkbd on the choosen keyboard in daemon mode
-actkbd -D -q -c $HOME/KeypadSB/config/actkbd.conf -d /dev/input/by-id/usb-1ea7_2.4G_Mouse-event-kbd
+actkbd -D -q -c $HOME/KeypadSB/config/actkbd.conf -d $aDev
 EOF
 
 chmod a+x ~/KeypadSB/soundpad.sh
 
 # Create rule for keypad       !!!!!!! allow selection of keyboard
-rm 70-hotkey-pad.rules
 cat > 70-hotkey-pad.rules<< EOF
 # /etc/udev/rules.d/70-hotkey-pad.rules
 # Rules for numpad soundboard
-ATTRS{idVendor}=="1ea7",
-ATTRS{idProduct}=="0066",
-OWNER="$USER"
+ACTION=="add|change", \
+SUBSYSTEMS=="usb", \
+ATTRS{idVendor}=="$vID", \
+ATTRS{idProduct}=="$pID", \
+OWNER="$USER", \
+ENV{LIBINPUT_IGNORE_DEVICE}="1"
 EOF
 
 sudo cp 70-hotkey-pad.rules /etc/udev/rules.d/
