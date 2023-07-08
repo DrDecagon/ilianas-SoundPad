@@ -46,6 +46,14 @@ cp ./config/* ~/KeypadSB/config/
 chmod a+x ~/KeypadSB/config/plistTool.sh
 
 # Choose device to be used
+#while true; do 
+#  aDev="/dev/input/by-id/$(zenity --list --title="Select keypad" --text="WARNING: this will BLOCK regular input from selected device" --hide-header --column="devices" $(ls /dev/input/by-id/) )"
+#  cat $aDev
+#  if zenity --question --title="Was this your keypad" --text="Did you see random characters when you pressed keys?" --default-cancel
+#    then break
+#  fi
+#done
+
 aDev="/dev/input/by-id/$(zenity --list --title="Select keypad" --text="WARNING: this will BLOCK regular input from selected device" --hide-header --column="devices" $(ls /dev/input/by-id/) )"
 vID=$(udevadm info $aDev | grep -F 'ID_VENDOR_ID=' | cut -d'=' -f2)
 pID=$(udevadm info $aDev | grep -F 'ID_MODEL_ID=' | cut -d'=' -f2)
